@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/sql">
+        <file alias="rita_create.sql">rita_create.sql</file>
+        <file alias="my.ini">my.ini</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file alias="dnalogin.png">dnalogin.png</file>
+        <file>images/add_user.png</file>
+        <file>images/delete_user.png</file>
+        <file>images/open_file.png</file>
+        <file>images/save_file.png</file>
+    </qresource>
+    <qresource prefix="/styles">
+        <file>rita.css</file>
+    </qresource>
+</RCC>
