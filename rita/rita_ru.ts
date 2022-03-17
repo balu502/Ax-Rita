@@ -206,7 +206,7 @@ Password should contains
     <message>
         <location filename="rita.cpp" line="1780"/>
         <source>Password not confirmed! Please check Your input.</source>
-        <translation>Ппароль не принят! Повторите ввод.</translation>
+        <translation>Пароль не принят! Повторите ввод.</translation>
     </message>
     <message>
         <location filename="rita.cpp" line="1840"/>
