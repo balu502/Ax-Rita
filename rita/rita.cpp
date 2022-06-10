@@ -538,9 +538,9 @@ bool RiTApplication::dbChkExists(){
 bool RiTApplication::dbBuild(){
 
     QString sqlCmd  =
-        QFile::exists(      baseDir + "/rita_create.sql")
-          ? file_to_string( baseDir + "/rita_create.sql")
-          : file_to_string(":/sql/rita_create.sql");
+        QFile::exists(      baseDir + "/rita_create.sql" )
+          ? file_to_string( baseDir + "/rita_create.sql" )
+          : file_to_string(      ":/sql/rita_create.sql" );
 
     qDebug() << "Starting database creating script";
 
@@ -3402,26 +3402,28 @@ int RiTApplication::setLocale(QString appLang) const{
 }
 
 
-int RiTApplication::setOption(const QString name, const QString value){
+int RiTApplication::setOption(const QString oName, const QString value){
 
     QStringList defOptions;
     defOptions << "locale"          << "fontcss"        // 0, 1
                << ""                << ""               // 2, 3
                << "clientpid"       << "heartbeatrate"; // 4, 5
 
-    if (!defOptions.contains(name.toLower()))
+    QString name = oName.toLower();
+
+    if (!defOptions.contains(name))
         return -1;
 
-    if (name.toLower() == defOptions[0])        // locale
+    if (name == defOptions[0])        // locale
         setLocale( value );
     else
-    if (name.toLower() == defOptions[4])        // clientpid
+    if (name == defOptions[4])        // clientpid
         startHeartBeat( value.toLongLong() );
     else
-    if (name.toLower() == defOptions[5])        // heartbeatrate
+    if (name == defOptions[5])        // heartbeatrate
         startHeartBeat( pidClient, value.toInt() );
     else
-        setProperty( CQSTR(name.toLower()), value );
+        setProperty( CQSTR(name), value );
 
     return  1;
 }
